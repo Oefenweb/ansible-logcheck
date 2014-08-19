@@ -1,0 +1,13 @@
+---
+# defaults file for logcheck
+logcheck_install:
+  - logcheck
+  - syslog-summary
+logcheck_reportlevel: server
+logcheck_sendmailto: root
+logcheck_syslogsummary: true
+logcheck_logfiles:
+  - /var/log/syslog
+  - /var/log/auth.log
+  - /var/log/mail.log
+  - /var/log/kern.log
