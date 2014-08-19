@@ -11,3 +11,4 @@ logcheck_logfiles:
   - /var/log/auth.log
   - /var/log/mail.log
   - /var/log/kern.log
+logcheck_custom_ignores: []

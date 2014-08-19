@@ -34,3 +34,13 @@
     mode: 0644
     force: yes
   tags: [configuration, logcheck, logcheck-cron-d]
+
+- name: update (custom) ignore.d rules
+  template:
+    src: etc/logcheck/ignore.d/custom.j2
+    dest: "/etc/logcheck/ignore.d.{{ logcheck_reportlevel }}/custom"
+    owner: root
+    group: logcheck
+    mode: 0640
+  when: logcheck_custom_ignores
+  tags: [configuration, logcheck, logcheck-ignore-d]

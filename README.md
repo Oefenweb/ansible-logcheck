@@ -13,6 +13,7 @@ None
 * `logcheck_sendmailto`: [default: `root`]: Controls the address mail goes to
 * `logcheck_syslogsummary`: [default: `true`]: Controls if syslog-summary is run over each section
 * `logcheck_logfiles`: [default: `[/var/log/{syslog,auth.log,mail.log,kern.log]`]: Log files to check
+* `logcheck_custom_ignores`: [default: `[]`]: Additional rules for lines to ignore
 
 ## Dependencies
 
