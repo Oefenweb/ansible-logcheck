@@ -21,8 +21,8 @@
     src: etc/logcheck/logcheck.logfiles.j2
     dest: /etc/logcheck/logcheck.logfiles
     owner: root
-    group: root
-    mode: 0644
+    group: logcheck
+    mode: 0640
   tags: [configuration, logcheck, logcheck-configuration]
 
 - name: update cron.d script
@@ -31,6 +31,6 @@
     dest: /etc/cron.d/logcheck
     owner: root
     group: root
-    mode: 0755
+    mode: 0644
     force: yes
   tags: [configuration, logcheck, logcheck-cron-d]
