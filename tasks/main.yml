@@ -33,4 +33,4 @@
     group: root
     mode: 0755
     force: yes
-  tags: [configuration, logcheck, logcheck-cron_d]
+  tags: [configuration, logcheck, logcheck-cron-d]
