@@ -3,7 +3,7 @@
 - name: install
   apt:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items: logcheck_install
   tags: [configuration, logcheck, logcheck-install]
 
