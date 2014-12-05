@@ -12,8 +12,8 @@ env:
 before_install:
   - sudo apt-get update -qq
 
-  # Remove integrit
-  - sudo apt-get remove --purge integrit
+  # Remove logcheck
+  - sudo apt-get remove --purge logcheck
 
 install:
   # Install Ansible.
