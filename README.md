@@ -27,7 +27,7 @@ None
 ---
 - hosts: all
   roles:
-  - logcheck
+    - logcheck
 ```
 
 #### License

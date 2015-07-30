@@ -1,5 +1,5 @@
----
 # test file for logcheck
+---
 - hosts: localhost
   remote_user: root
   roles:
