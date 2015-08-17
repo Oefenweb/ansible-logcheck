@@ -1,6 +1,6 @@
 # tasks file for logcheck
 ---
-- name: install
+- name: Ensure logcheck related packages are installed
   apt:
     name: "{{ item }}"
     state: latest
@@ -35,6 +35,7 @@
     group: root
     mode: 0644
     force: yes
+  when: logcheck_manage_cronjob
   tags: [configuration, logcheck, logcheck-cron-d]
 
 - name: update (custom) ignore.d rules
