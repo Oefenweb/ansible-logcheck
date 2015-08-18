@@ -1,7 +1,6 @@
 # defaults file for logcheck
 ---
 logcheck_install:
-  - logcheck
   - syslog-summary
 logcheck_reportlevel: server
 logcheck_sendmailto: root

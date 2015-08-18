@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `logcheck_install`: [default: `[logcheck, syslog-summary]`]: Packages to install
+* `logcheck_install`: [default: `[syslog-summary]`]: Additional packages to install (e.g. `syslog-summary`)
 * `logcheck_reportlevel`: [default: `server`]: Controls the level of filtering
 * `logcheck_sendmailto`: [default: `root`]: Controls the address mail goes to
 * `logcheck_logfiles`: [default: `[/var/log/{syslog,auth.log,mail.log,kern.log]`]: Log files to check
