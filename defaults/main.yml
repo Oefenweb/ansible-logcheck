@@ -5,10 +5,11 @@ logcheck_install:
   - syslog-summary
 logcheck_reportlevel: server
 logcheck_sendmailto: root
-logcheck_syslogsummary: true
+logcheck_sortuniq: false
 logcheck_logfiles:
   - /var/log/syslog
   - /var/log/auth.log
   - /var/log/mail.log
   - /var/log/kern.log
 logcheck_custom_ignores: []
+logcheck_manage_cronjob: True
