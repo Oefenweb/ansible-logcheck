@@ -1,11 +1,18 @@
 # tasks file for logcheck
 ---
-- name: install
+- name: install dependencies
   apt:
     name: "{{ item }}"
     state: latest
     update_cache: true
     cache_valid_time: 3600
+  with_items: logcheck_dependencies
+  tags: [configuration, logcheck, logcheck-dependencies]
+
+- name: install additional
+  apt:
+    name: "{{ item }}"
+    state: latest
   with_items: logcheck_install
   tags: [configuration, logcheck, logcheck-install]
 
@@ -35,6 +42,7 @@
     group: root
     mode: 0644
     force: yes
+  when: logcheck_manage_cron_d
   tags: [configuration, logcheck, logcheck-cron-d]
 
 - name: update (custom) ignore.d rules
