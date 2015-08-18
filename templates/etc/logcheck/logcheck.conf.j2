@@ -55,7 +55,7 @@ SORTUNIQ={{ '1' if logcheck_sortuniq else '0' }}
 # Controls the base directory for rules file location
 # This must be an absolute path
 
-{% if logcheck_rulesdir is string and logcheck_rulesdir %}
+{% if logcheck_rulesdir is defined %}
 RULEDIR="{{ logcheck_rulesdir }}"
 {% else %}
 #RULEDIR="/etc/logcheck"

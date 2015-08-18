@@ -12,6 +12,4 @@ logcheck_logfiles:
   - /var/log/mail.log
   - /var/log/kern.log
 logcheck_custom_ignores: []
-logcheck_manage_cronjob: False
-
-# logcheck_rulesdir: '/etc/logcheck'
+logcheck_manage_cronjob: True
