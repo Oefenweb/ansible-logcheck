@@ -5,7 +5,6 @@ logcheck_install:
   - syslog-summary
 logcheck_reportlevel: server
 logcheck_sendmailto: root
-logcheck_syslogsummary: true
 logcheck_sortuniq: false
 logcheck_logfiles:
   - /var/log/syslog

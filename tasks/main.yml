@@ -1,6 +1,6 @@
 # tasks file for logcheck
 ---
-- name: Ensure logcheck related packages are installed
+- name: install
   apt:
     name: "{{ item }}"
     state: latest

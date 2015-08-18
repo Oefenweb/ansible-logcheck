@@ -65,7 +65,7 @@ RULEDIR="{{ logcheck_rulesdir }}"
 # Alternatively, set to "1" to enable extra summary.
 # HINT: syslog-summary needs to be installed.
 
-SYSLOGSUMMARY={{ '1' if (logcheck_syslogsummary and 'syslog-summary' in logcheck_install) else '0' }}
+SYSLOGSUMMARY={{ '1' if 'syslog-summary' in logcheck_install else '0' }}
 
 # Controls Subject: lines on logcheck reports:
 
