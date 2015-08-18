@@ -15,7 +15,9 @@ None
 * `logcheck_sendmailto`: [default: `root`]: Controls the address mail goes to
 * `logcheck_logfiles`: [default: `[/var/log/{syslog,auth.log,mail.log,kern.log]`]: Log files to check
 * `logcheck_custom_ignores`: [default: `[]`]: Additional rules for lines to ignore
-* `logcheck_rulesdir`: [default: undefined (default of logcheck which is `/etc/logcheck/`)]: Change the directory where logcheck will look for it’s rules.
+* `logcheck_sortuniq`: [default: `false`]: Controls whether `sort -u` is used on log entries
+* `logcheck_rulesdir`: [optional]: Controls the base directory for rules file location, this must be an absolute path
+* `logcheck_manage_cron_d`: [default: `true`]: Whether or not to manage `/etc/cron.d/logcheck`
 
 ## Dependencies
 

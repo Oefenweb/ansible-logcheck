@@ -57,8 +57,6 @@ SORTUNIQ={{ '1' if logcheck_sortuniq else '0' }}
 
 {% if logcheck_rulesdir is defined %}
 RULEDIR="{{ logcheck_rulesdir }}"
-{% else %}
-#RULEDIR="/etc/logcheck"
 {% endif %}
 
 # Controls if syslog-summary is run over each section.
