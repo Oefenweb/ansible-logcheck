@@ -41,7 +41,7 @@
     owner: root
     group: root
     mode: 0644
-    force: yes
+    force: true
   when: logcheck_manage_cron_d
   tags: [configuration, logcheck, logcheck-cron-d]
 
