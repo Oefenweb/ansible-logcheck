@@ -6,14 +6,14 @@
     state: latest
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: logcheck_dependencies
+  with_items: '{{ logcheck_dependencies }}'
   tags: [configuration, logcheck, logcheck-dependencies]
 
 - name: install additional
   apt:
     name: "{{ item }}"
     state: latest
-  with_items: logcheck_install
+  with_items: '{{ logcheck_install }}'
   tags: [configuration, logcheck, logcheck-install]
 
 - name: update configuration file - /etc/logcheck/logcheck.conf
