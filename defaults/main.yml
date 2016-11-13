@@ -12,3 +12,4 @@ logcheck_logfiles:
   - /var/log/kern.log
 logcheck_custom_ignores: []
 logcheck_manage_cron_d: true
+logcheck_cron: "@daily"
