@@ -21,8 +21,8 @@
     src: etc/logcheck/logcheck.conf.j2
     dest: /etc/logcheck/logcheck.conf
     owner: root
-    group: root
-    mode: 0644
+    group: logcheck
+    mode: 0640
   tags: [configuration, logcheck, logcheck-configuration]
 
 - name: update configuration file - /etc/logcheck/logcheck.logfiles
