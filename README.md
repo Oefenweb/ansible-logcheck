@@ -18,6 +18,7 @@ None
 * `logcheck_sortuniq`: [default: `false`]: Controls whether `sort -u` is used on log entries
 * `logcheck_rulesdir`: [optional]: Controls the base directory for rules file location, this must be an absolute path
 * `logcheck_manage_cron_d`: [default: `true`]: Whether or not to manage `/etc/cron.d/logcheck`
+* `logcheck_cron`: [default: `@daily`]: cron.d timestamp when to execute logcheck
 
 ## Dependencies
 

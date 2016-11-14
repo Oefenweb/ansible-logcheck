@@ -1,9 +1,10 @@
 # /etc/cron.d/logcheck: crontab entries for the logcheck package
+# {{ ansible_managed }}
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
 
 @reboot         logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck -R; fi
-@daily          logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi
+{{ logcheck_cron }}          logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi
 
 # EOF

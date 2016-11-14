@@ -35,8 +35,8 @@
   tags: [configuration, logcheck, logcheck-configuration]
 
 - name: update cron.d script
-  copy:
-    src: etc/cron.d/logcheck
+  template:
+    src: etc/cron.d/logcheck.j2
     dest: /etc/cron.d/logcheck
     owner: root
     group: root
