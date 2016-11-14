@@ -3,18 +3,24 @@
 - name: install dependencies
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: '{{ logcheck_dependencies }}'
-  tags: [configuration, logcheck, logcheck-dependencies]
+  with_items: "{{ logcheck_dependencies }}"
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-dependencies
 
 - name: install additional
   apt:
     name: "{{ item }}"
     state: latest
-  with_items: '{{ logcheck_install }}'
-  tags: [configuration, logcheck, logcheck-install]
+  with_items: "{{ logcheck_install }}"
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-install
 
 - name: update configuration file - /etc/logcheck/logcheck.conf
   template:
@@ -23,7 +29,10 @@
     owner: root
     group: logcheck
     mode: 0640
-  tags: [configuration, logcheck, logcheck-configuration]
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-configuration
 
 - name: update configuration file - /etc/logcheck/logcheck.logfiles
   template:
@@ -32,7 +41,10 @@
     owner: root
     group: logcheck
     mode: 0640
-  tags: [configuration, logcheck, logcheck-configuration]
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-configuration
 
 - name: update cron.d script
   template:
@@ -43,7 +55,10 @@
     mode: 0644
     force: true
   when: logcheck_manage_cron_d
-  tags: [configuration, logcheck, logcheck-cron-d]
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-cron-d
 
 - name: update (custom) ignore.d rules
   template:
@@ -53,4 +68,7 @@
     group: logcheck
     mode: 0640
   when: logcheck_custom_ignores
-  tags: [configuration, logcheck, logcheck-ignore-d]
+  tags:
+    - configuration
+    - logcheck
+    - logcheck-ignore-d
