@@ -52,7 +52,7 @@
     group: root
     mode: 0644
     force: true
-  when: logcheck_manage_cron_d
+  when: logcheck_manage_cron_d | bool
   tags:
     - configuration
     - logcheck
@@ -65,7 +65,7 @@
     owner: root
     group: logcheck
     mode: 0640
-  when: logcheck_custom_ignores
+  when: logcheck_custom_ignores|length > 0
   tags:
     - configuration
     - logcheck
