@@ -65,7 +65,7 @@
     owner: root
     group: logcheck
     mode: 0640
-  when: logcheck_custom_ignores|length > 0
+  when: logcheck_custom_ignores | length > 0
   tags:
     - configuration
     - logcheck
