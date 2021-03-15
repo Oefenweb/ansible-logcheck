@@ -1,4 +1,4 @@
-# tasks file for logcheck
+# tasks file
 ---
 - name: install dependencies
   apt:
