@@ -1,6 +1,6 @@
 ## logcheck
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-logcheck.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-logcheck) 
+[![CI](https://github.com/Oefenweb/ansible-logcheck/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-logcheck/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-logcheck-blue.svg)](https://galaxy.ansible.com/Oefenweb/logcheck)
 
 Set up logcheck in Debian-like systems.
