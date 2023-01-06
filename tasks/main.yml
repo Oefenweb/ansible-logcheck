@@ -1,7 +1,7 @@
 # tasks file
 ---
-- name: install dependencies
-  apt:
+- name: install dependencies  # noqa args[module]
+  ansible.builtin.apt:
     name: "{{ logcheck_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -11,8 +11,8 @@
     - logcheck
     - logcheck-dependencies
 
-- name: install additional
-  apt:
+- name: install additional  # noqa args[module]
+  ansible.builtin.apt:
     name: "{{ logcheck_install }}"
     state: "{{ apt_install_state | default('latest') }}"
   tags:
@@ -21,7 +21,7 @@
     - logcheck-install
 
 - name: update configuration file - /etc/logcheck/logcheck.conf
-  template:
+  ansible.builtin.template:
     src: etc/logcheck/logcheck.conf.j2
     dest: /etc/logcheck/logcheck.conf
     owner: root
@@ -33,7 +33,7 @@
     - logcheck-configuration
 
 - name: update configuration file - /etc/logcheck/logcheck.logfiles
-  template:
+  ansible.builtin.template:
     src: etc/logcheck/logcheck.logfiles.j2
     dest: /etc/logcheck/logcheck.logfiles
     owner: root
@@ -45,7 +45,7 @@
     - logcheck-configuration
 
 - name: update cron.d script
-  template:
+  ansible.builtin.template:
     src: etc/cron.d/logcheck.j2
     dest: /etc/cron.d/logcheck
     owner: root
@@ -59,7 +59,7 @@
     - logcheck-cron-d
 
 - name: update (custom) ignore.d rules
-  template:
+  ansible.builtin.template:
     src: etc/logcheck/ignore.d/custom.j2
     dest: "/etc/logcheck/ignore.d.{{ logcheck_reportlevel }}/custom"
     owner: root
