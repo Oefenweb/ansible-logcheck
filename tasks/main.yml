@@ -26,7 +26,7 @@
     dest: /etc/logcheck/logcheck.conf
     owner: root
     group: logcheck
-    mode: 0640
+    mode: '0640'
   tags:
     - configuration
     - logcheck
@@ -38,7 +38,7 @@
     dest: /etc/logcheck/logcheck.logfiles
     owner: root
     group: logcheck
-    mode: 0640
+    mode: '0640'
   tags:
     - configuration
     - logcheck
@@ -50,7 +50,7 @@
     dest: /etc/cron.d/logcheck
     owner: root
     group: root
-    mode: 0644
+    mode: '0644'
     force: true
   when: logcheck_manage_cron_d | bool
   tags:
@@ -64,7 +64,7 @@
     dest: "/etc/logcheck/ignore.d.{{ logcheck_reportlevel }}/custom"
     owner: root
     group: logcheck
-    mode: 0640
+    mode: '0640'
   when: logcheck_custom_ignores | length > 0
   tags:
     - configuration
